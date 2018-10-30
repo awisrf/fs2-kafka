@@ -25,6 +25,7 @@ lazy val commonSettings = Seq(
    javaOptions += "-Djava.net.preferIPv4Stack=true",
    scalacOptions in (Compile, console) ~= {_.filterNot("-Ywarn-unused-import" == _)},
    scalacOptions in (Test, console) := (scalacOptions in (Compile, console)).value,
+   resolvers += "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
    libraryDependencies ++= Seq(
     compilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
     , "org.scalatest" %% "scalatest" % "3.0.0" % "test"
